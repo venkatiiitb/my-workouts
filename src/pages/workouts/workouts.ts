@@ -28,6 +28,16 @@ export class WorkoutsPage {
 
   }
 
+  ionViewWillEnter(){
+
+    this._workoutService.getWorkouts().subscribe(workouts => {
+
+      this.workouts = workouts;
+
+    });
+
+  }
+
   workoutSelected(event, workout){
 
     this.navCtrl.push(WorkoutDetailsPage, {
